@@ -1,0 +1,10 @@
+//Create a Database and choose it to run next set of SQLs
+create database twitter;
+use twitter;
+//Create a notification integration for Azure Storage queue 
+create notification integration SNOWPIPE_DEMO_NOTIFICATION_INT
+  enabled = true
+  type = queue
+  notification_provider = azure_storage_queue
+  azure_storage_queue_primary_uri = 'https://snowpipeaccount2022.queue.core.windows.net/snowpipequeue'
+  azure_tenant_id = '8e6e7e9e-940c-4115-a4a9-26bf16812d24';
